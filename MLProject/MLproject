@@ -1,0 +1,11 @@
+name: Heart Disease CI
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      C: {type: float, default: 1.0}
+      solver: {type: string, default: "liblinear"}
+      dataset: {type: string, default: "heart_disease_preprocessing.csv"}
+    command: "python modelling.py {C} {solver} {dataset}"
